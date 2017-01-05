@@ -44,7 +44,7 @@ foreach($wel as $value) {
  
 ////////// CURL ////////////
 
-$cha = curl_init('https://graph.facebook.com/v2.6/1100847596679637/thread_settings?access_token='.$accessToken);
+$cha = curl_init('https://graph.facebook.com/v2.6/587221591431576/thread_settings?access_token='.$accessToken);
 curl_setopt($cha, CURLOPT_POST, 1);
 curl_setopt($cha, CURLOPT_POSTFIELDS, json_encode($value));
 curl_setopt($cha, CURLOPT_HTTPHEADER, ['Content-Type: application/json']);
@@ -342,7 +342,7 @@ for($i = 0; $i < count($messageText); $i++) {
 
 ////////// CURL ////////////
 
-$ch = curl_init('https://graph.facebook.com/v2.6/1100847596679637/messages?access_token='.$accessToken);
+$ch = curl_init('https://graph.facebook.com/v2.6/587221591431576/messages?access_token='.$accessToken);
 curl_setopt($ch, CURLOPT_POST, 1);
 curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($response));
 curl_setopt($ch, CURLOPT_HTTPHEADER, ['Content-Type: application/json']);
