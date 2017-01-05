@@ -64,6 +64,7 @@ $messageText = $input['entry'][0]['messaging'][0]['message']['text']; //text rec
 //$messageImage = $input['entry'][0]['messaging'][0]['message']['attachments'][0]['type']['image']; //receive attachment
 $postback = $input['entry'][0]['messaging'][0]['postback']['payload']; //get postback payload
 $callback = $input['entry'][0]['messaging'][0]['message']['attachments'][0]['payload']['coordinates'];
+$response = null;
 
 
     if (isset($callback) && !empty($callback))  {
@@ -79,9 +80,6 @@ $callback = $input['entry'][0]['messaging'][0]['message']['attachments'][0]['pay
       ];
 
        }
-
-
-
       
 
     // if (isset($lat) && !empty($lat)) {
@@ -292,31 +290,15 @@ for($i = 0; $i < count($messageText); $i++) {
     ];
 
       }
+
 }
-//send message to facebook bot
-
-
-//Set incoming Message
-
-    if (isset($messageImage)&& !empty($messageImage))
-
-        {
-          $answer = 'ส่งรูปมาหาพ่อง';
-
-      $response = [
-        'recipient' => [ 'id' => $senderId ],
-        'message' => [ 'text' => $answer ]
-    ];
-
-    } 
-
-    
+//send message to facebook bot    
 
 
 
 ////////// CURL ////////////
 
-$ch = curl_init('https://graph.facebook.com/v2.6/me/messages?access_token='.$accessToken);
+$ch = curl_init('https://graph.facebook.com/v2.6/211380252244527/messages?access_token='.$accessToken);
 curl_setopt($ch, CURLOPT_POST, 1);
 curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($response));
 curl_setopt($ch, CURLOPT_HTTPHEADER, ['Content-Type: application/json']);
