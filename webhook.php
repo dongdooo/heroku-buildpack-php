@@ -73,12 +73,6 @@ $callback = $input['entry'][0]['messaging'][0]['message']['attachments'][0]['pay
 
       $msg = $lat . ',' . $long;
 
-      $sql = "UPDATE fbchatbot SET message='$msg' WHERE id='1'";
-
-      $localDB = mysqli_query($conn, $sql);
-
-          if($localDB) {
-
                 $answer =  'Location : ' . $lat .','. $long; 
 
                 $response = [
@@ -86,13 +80,7 @@ $callback = $input['entry'][0]['messaging'][0]['message']['attachments'][0]['pay
                   'message' => [ 'text' => $answer ]
               ];
 
-
-            } else {
-
-              echo 'error woiiiiiiiii WTF' ;
-            }
-
-          }
+       }
 
 
 
@@ -145,12 +133,6 @@ for($i = 0; $i < count($messageText); $i++) {
 
     if($messageText == "hi" ) { 
 
-      $sql = "UPDATE fbchatbot SET info='$messageText' WHERE id='1'";
-
-      $localDB = mysqli_query($conn, $sql);
-
-          if($localDB) { 
-
                 $answer = 'Hi ho';
 
                 $response = [
@@ -159,10 +141,7 @@ for($i = 0; $i < count($messageText); $i++) {
               ];
 
 
-            } else {
-
-              echo 'error woiiiiiiiii WTF' ;
-            }
+            } 
 
 
   } else if ($messageText == 'yo')
