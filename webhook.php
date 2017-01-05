@@ -329,10 +329,4 @@ $result = curl_exec($ch);
 curl_close($ch);
 
 
-
-  mysqli_close ($conn); // Connection Closed.
-
-  exit();
-
-
 ?>
