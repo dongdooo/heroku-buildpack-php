@@ -71,14 +71,12 @@ $callback = $input['entry'][0]['messaging'][0]['message']['attachments'][0]['pay
       $lat = $callback['lat'];
       $long = $callback['long'];
 
-      $msg = $lat . ',' . $long;
+        $answer =  'Location : ' . $lat .','. $long; 
 
-                $answer =  'Location : ' . $lat .','. $long; 
-
-                $response = [
-                  'recipient' => [ 'id' => $senderId ],
-                  'message' => [ 'text' => $answer ]
-              ];
+        $response = [
+          'recipient' => [ 'id' => $senderId ],
+          'message' => [ 'text' => $answer ]
+      ];
 
        }
 
