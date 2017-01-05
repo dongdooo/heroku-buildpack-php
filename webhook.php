@@ -136,10 +136,7 @@ for($i = 0; $i < count($messageText); $i++) {
                 $response = [
                   'recipient' => [ 'id' => $senderId ],
                   'message' => [ 'text' => $answer ]
-              ];
-
-
-            } 
+              ]; 
 
 
   } else if ($messageText == 'yo')
